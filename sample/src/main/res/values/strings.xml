@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DataBinding for RecyclerView</string>
+
+    <string name="page_users">Users</string>
+    <string name="page_locations">Locations</string>
+    <string name="page_all_in_one">All in One</string>
+</resources>

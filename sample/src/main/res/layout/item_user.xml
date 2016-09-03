@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.drextended.rvdbsample.R"/>
+
+        <import type="com.drextended.rvdbsample.model.ActionType"/>
+
+        <variable
+            name="user"
+            type="com.drextended.rvdbsample.model.User"/>
+
+        <variable
+            name="actionHandler"
+            type="com.drextended.actionhandler.listener.ActionClickListener"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stateListAnimator="@animator/raise"
+        app:actionHandler="@{actionHandler}"
+        app:actionType="@{ActionType.OPEN}"
+        app:actionTypeLongClick="@{ActionType.MENU}"
+        app:model="@{user}">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="4dp"
+                android:scaleType="centerCrop"
+                app:glideAnimation="@{R.anim.scale_in}"
+                app:glideCacheStrategy='@{"RESULT"}'
+                app:glidePath="@{user.avatar}"
+                app:glidePlaceholder="@{@android:drawable/ic_menu_gallery}"
+                app:glideTransform='@{"CIRCLE"}'
+                tools:src="@android:drawable/ic_menu_gallery"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="72dp"
+                android:layout_marginRight="16dp"
+                android:text="@{user.name}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                tools:text="Name"/>
+
+        </FrameLayout>
+    </android.support.v7.widget.CardView>
+
+</layout>

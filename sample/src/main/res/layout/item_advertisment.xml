@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:ignore="RtlHardcoded">
+
+    <data>
+
+        <import type="com.drextended.rvdbsample.R"/>
+
+        <import type="com.drextended.rvdbsample.model.ActionType"/>
+
+        <variable
+            name="advertisment"
+            type="com.drextended.rvdbsample.model.Advertisement"/>
+
+        <variable
+            name="actionHandler"
+            type="com.drextended.actionhandler.listener.ActionClickListener"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stateListAnimator="@animator/raise"
+        app:actionHandler="@{actionHandler}"
+        app:actionType="@{ActionType.OPEN}"
+        app:actionTypeLongClick="@{ActionType.MENU}"
+        app:model="@{advertisment}">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                app:glideAnimation="@{R.anim.slide_in_top}"
+                app:glideCacheStrategy='@{"ALL"}'
+                app:glidePath="@{advertisment.image}"
+                app:glidePlaceholder="@{@android:drawable/ic_menu_gallery}"
+                tools:src="@android:drawable/ic_menu_gallery"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="64dp"
+                android:background="@android:color/white"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="@{advertisment.label}"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                tools:text="Advertisment"/>
+
+        </FrameLayout>
+    </android.support.v7.widget.CardView>
+
+</layout>
