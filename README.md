@@ -30,7 +30,7 @@ dependencies {
 
 ## Usage
 
-1. At first you definitely should have pojo-models for items
+###1. At first you definitely should have pojo-models for items
 
 ```java
     public class User implements BaseModel {
@@ -47,7 +47,7 @@ dependencies {
     }
 ```
 
-2. Then you should create layouts for each item and for your list page
+####2. Then you should create layouts for each item and for your list page
 
 **fragment_page.xml**
 ```xml
@@ -109,7 +109,7 @@ dependencies {
 ```
  The same for **item_location.xml** and for **item_advertisement.xml**
 
-3. Then create ItemDelegates for items if you do not want to use generic
+####3. Then create ItemDelegates for items if you do not want to use generic
 
 **UserDelegate.java**
 ```java
@@ -144,7 +144,7 @@ dependencies {
     }
 ```
 
-4. Assemble all this in your viewmodel
+####4. Assemble all this in your viewmodel
 
 **AllInOneListViewModel.java**
 ```java
