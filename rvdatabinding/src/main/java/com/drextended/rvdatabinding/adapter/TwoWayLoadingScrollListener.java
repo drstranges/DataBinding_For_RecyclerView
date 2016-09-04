@@ -27,7 +27,6 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 public class TwoWayLoadingScrollListener extends RecyclerView.OnScrollListener {
 
     private static final int DEFAULT_VISIBLE_THRESOLD = 2;
-    public static String TAG = "TwoWayLoadingScrollListener";
     private final OnLoadMoreListener mMoreListener;
 
     private OnPositionChangeListener mPositionChangeListener;
