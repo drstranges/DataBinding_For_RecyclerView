@@ -22,7 +22,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 
 /**
- * Created by roman.donchenko on 26.04.2016.
+ * RecyclerView ScrollListener for implementing two-way lazy loading list (endless list)
  */
 public class TwoWayLoadingScrollListener extends RecyclerView.OnScrollListener {
 

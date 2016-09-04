@@ -16,8 +16,8 @@ ext {
 
     libraryDescription = 'Provides flexible way to use data binding with RecyclerView!'
 
-    siteUrl = 'https://github.com/drstranges/DataBindingForRecyclerView'
-    gitUrl = 'https://github.com/drstranges/DataBindingForRecyclerView.git'
+    siteUrl = 'https://github.com/drstranges/DataBinding_For_RecyclerView'
+    gitUrl = 'https://github.com/drstranges/DataBinding_For_RecyclerView.git'
 
     developerId = 'drstranges'
     developerName = 'Roman Donchenko'
@@ -30,7 +30,7 @@ ext {
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.1"
+    buildToolsVersion "24.0.2"
 
     dataBinding {
         enabled = true
@@ -52,12 +52,112 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-//    provided 'com.android.support:appcompat-v7:+'
-//    provided 'com.android.support:recyclerview-v7:+'
-    compile 'com.android.support:recyclerview-v7:24.1.1'
+
     compile 'com.hannesdorfmann:adapterdelegates2:2.0.1'
     compile 'com.drextended.actionhandler:actionhandler:0.1.16'
+
+    provided 'com.android.support:appcompat-v7:+'
+    provided 'com.android.support:recyclerview-v7:+'
+    provided 'com.android.support:recyclerview-v7:+'
+
 }
 
 //apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
 //apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+version = libraryVersion
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    failOnError = false
+}
+
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+// Bintray
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
+    configurations = ['archives']
+    pkg {
+        repo = bintrayRepo
+        name = bintrayName
+        desc = libraryDescription
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = allLicenses
+        publish = true
+        publicDownloadNumbers = true
+        version {
+            desc = libraryDescription
+            gpg {
+                sign = true //Determines whether to GPG sign the files. The default is false
+                passphrase = properties.getProperty("bintray.gpg.password")
+                //Optional. The passphrase for GPG signing'
+            }
+        }
+    }
+}
+
+group = publishedGroupId                               // Maven Group ID for the artifact
+
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                groupId publishedGroupId
+                artifactId artifact
+
+                // Add your description here
+                name libraryName
+                description libraryDescription
+                url siteUrl
+
+                // Set your license
+                licenses {
+                    license {
+                        name licenseName
+                        url licenseUrl
+                    }
+                }
+                developers {
+                    developer {
+                        id developerId
+                        name developerName
+                        email developerEmail
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+
+                }
+            }
+        }
+    }
+}

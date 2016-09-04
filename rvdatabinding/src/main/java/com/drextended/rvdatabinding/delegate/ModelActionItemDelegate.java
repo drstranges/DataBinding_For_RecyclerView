@@ -36,7 +36,7 @@ import com.drextended.rvdatabinding.adapter.BindingHolder;
 public class ModelActionItemDelegate<T> extends ModelItemDelegate<T> {
 
     protected ActionClickListener mActionHandler;
-    private int mActionHandlerId = BR.actionHandler;
+    protected int mActionHandlerId = BR.actionHandler;
 
     public ModelActionItemDelegate(ActionClickListener actionHandler, @NonNull Class<? extends T> modelClass, @LayoutRes int itemLayoutResId) {
         super(modelClass, itemLayoutResId);
