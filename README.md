@@ -1,4 +1,4 @@
-# ActionHandler
+# DataBinding for RecyclerView
 
 [![Release](https://img.shields.io/badge/jcenter-0.1.0-blue.svg)](https://bintray.com/drstranges/android-extended/databinding-for-recyclerview)
 
