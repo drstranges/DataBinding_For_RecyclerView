@@ -195,6 +195,12 @@ https://github.com/sockeqwe/AdapterDelegates
 
 http://hannesdorfmann.com/android/adapter-delegates
 
+## Sample
+
+[Sample apk file](./!_apk/sample.apk)
+
+![](./!_img/img1.png) ![](./!_img/img2.png) ![](./!_img/img3.png)
+
 License
 =======
 
