@@ -199,7 +199,7 @@ http://hannesdorfmann.com/android/adapter-delegates
 
 [Sample apk file](./!_apk/sample.apk)
 
-![](./!_img/img1.png =200) ![](./!_img/img2.png =200) ![](./!_img/img3.png =200)
+<img src="./!_img/img1.png" width="200"/> <img src="./!_img/img2.png" width="200"/> <img src="./!_img/img3.png" width="200"/>
 
 License
 =======
