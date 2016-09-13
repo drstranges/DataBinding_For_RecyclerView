@@ -1,6 +1,6 @@
 # DataBinding for RecyclerView
 
-[![Release](https://img.shields.io/badge/jcenter-0.1.0-blue.svg)](https://bintray.com/drstranges/android-extended/databinding-for-recyclerview)
+[![Release](https://img.shields.io/badge/jcenter-0.1.1-blue.svg)](https://bintray.com/drstranges/android-extended/databinding-for-recyclerview)
 
 ## Overview
 
@@ -13,7 +13,7 @@ repositories {
     jcenter()
 }
 dependencies {
-    compile 'com.drextended.rvdatabinding:rvdatabinding:0.1.0'
+    compile 'com.drextended.rvdatabinding:rvdatabinding:0.1.1'
 }
 ```
 

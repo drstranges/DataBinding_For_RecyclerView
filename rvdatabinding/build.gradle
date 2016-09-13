@@ -3,7 +3,7 @@ apply plugin: 'com.android.library'
 ext {
     libraryVersionRevision = 0
     libraryVersionMinor = 1
-    libraryVersionMajor = 0
+    libraryVersionMajor = 1
 
     libraryVersion = libraryVersionMajor + '.' + libraryVersionMinor + '.' + libraryVersionRevision
 
@@ -37,7 +37,7 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 15
         targetSdkVersion 24
         versionCode libraryVersionRevision
         versionName libraryVersion
@@ -58,8 +58,6 @@ dependencies {
 
     provided 'com.android.support:appcompat-v7:+'
     provided 'com.android.support:recyclerview-v7:+'
-    provided 'com.android.support:recyclerview-v7:+'
-
 }
 
 //apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
