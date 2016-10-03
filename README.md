@@ -9,12 +9,17 @@ This library provides simple and flexible way to configuration RecyclerView usin
 Add library as gradle dependency
 
 ```gradle
-repositories { 
-    jcenter()
-}
-dependencies {
-    compile 'com.drextended.rvdatabinding:rvdatabinding:1.1.0'
-}
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        compile 'com.drextended.rvdatabinding:rvdatabinding:1.1.0'
+    }
+
+    // Don't forget to enable data binding
+    dataBinding {
+        enabled = true
+    }
 ```
 
 ## Features
