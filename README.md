@@ -13,7 +13,7 @@ repositories {
     jcenter()
 }
 dependencies {
-    compile 'com.drextended.rvdatabinding:rvdatabinding:0.1.1'
+    compile 'com.drextended.rvdatabinding:rvdatabinding:1.1.0'
 }
 ```
 
