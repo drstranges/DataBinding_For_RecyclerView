@@ -1,6 +1,6 @@
 # DataBinding for RecyclerView
 
-[![Release](https://img.shields.io/badge/jcenter-0.1.1-blue.svg)](https://bintray.com/drstranges/android-extended/databinding-for-recyclerview)
+[ ![Download](https://api.bintray.com/packages/drstranges/android-extended/databinding-for-recyclerview/images/download.svg) ](https://bintray.com/drstranges/android-extended/databinding-for-recyclerview/_latestVersion)
 
 ## Overview
 
